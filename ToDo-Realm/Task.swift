@@ -13,7 +13,7 @@ class Task: Object {
     dynamic var taskDesc = ""
     dynamic var createdDate = NSDate()
     dynamic var taskPriority = 0
-    dynamic var taskId = 0
+    dynamic var taskId = ""
     
     override static func primaryKey() -> String? {
         return "taskId"

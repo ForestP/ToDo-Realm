@@ -6,8 +6,17 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFDisplay-Light.otf">
+            <string>SFUIDisplay-Light</string>
+        </array>
+        <array key="SFDisplay-Regular.otf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--To DoVC-->
         <scene sceneID="tne-QT-ifu">
@@ -60,11 +69,83 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="tgW-LF-pWU" id="Uh3-7L-BGM"/>
+                        <segue destination="aZu-eF-hij" kind="presentation" identifier="goToTaskDetailVC" id="uNv-aS-o4w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+            <point key="canvasLocation" x="-2" y="37"/>
+        </scene>
+        <!--Task DetailVC-->
+        <scene sceneID="Mxb-nw-kBC">
+            <objects>
+                <viewController id="aZu-eF-hij" customClass="TaskDetailVC" customModule="ToDo_Realm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lQS-wQ-K3h"/>
+                        <viewControllerLayoutGuide type="bottom" id="cuG-aG-m5W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K6A-5t-BtB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJJ-Yu-lJQ">
+                                <rect key="frame" x="100.5" y="80" width="174.5" height="30"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3O9-Sb-Tl5">
+                                <rect key="frame" x="24" y="118" width="327" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REB-Ys-sFO">
+                                <rect key="frame" x="149" y="188" width="76.5" height="30"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="G9P-O0-QpL">
+                                <rect key="frame" x="92" y="226" width="191" height="29"/>
+                                <segments>
+                                    <segment title="Low"/>
+                                    <segment title="Medium"/>
+                                    <segment title="High"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBt-v3-Swt">
+                                <rect key="frame" x="156.5" y="354" width="62" height="42"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="25"/>
+                                <state key="normal" title="Finish"/>
+                                <connections>
+                                    <action selector="finishBtnPressed:" destination="aZu-eF-hij" eventType="touchUpInside" id="ZfM-uJ-iUQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WJJ-Yu-lJQ" firstAttribute="centerX" secondItem="K6A-5t-BtB" secondAttribute="centerX" id="77i-YP-DdR"/>
+                            <constraint firstItem="G9P-O0-QpL" firstAttribute="centerX" secondItem="K6A-5t-BtB" secondAttribute="centerX" id="DiB-FU-LiB"/>
+                            <constraint firstItem="REB-Ys-sFO" firstAttribute="centerX" secondItem="K6A-5t-BtB" secondAttribute="centerX" id="E5e-7X-XnY"/>
+                            <constraint firstItem="FBt-v3-Swt" firstAttribute="centerX" secondItem="K6A-5t-BtB" secondAttribute="centerX" id="Ho5-e1-hgt"/>
+                            <constraint firstItem="3O9-Sb-Tl5" firstAttribute="leading" secondItem="K6A-5t-BtB" secondAttribute="leadingMargin" constant="8" id="NAt-HC-Tlc"/>
+                            <constraint firstItem="REB-Ys-sFO" firstAttribute="top" secondItem="3O9-Sb-Tl5" secondAttribute="bottom" constant="40" id="OBB-y1-wOK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3O9-Sb-Tl5" secondAttribute="trailing" constant="8" id="V1h-YK-Lq8"/>
+                            <constraint firstItem="WJJ-Yu-lJQ" firstAttribute="top" secondItem="lQS-wQ-K3h" secondAttribute="bottom" constant="60" id="WXW-Wb-zSc"/>
+                            <constraint firstItem="FBt-v3-Swt" firstAttribute="top" secondItem="G9P-O0-QpL" secondAttribute="bottom" constant="100" id="es2-Y3-aFs"/>
+                            <constraint firstItem="3O9-Sb-Tl5" firstAttribute="top" secondItem="WJJ-Yu-lJQ" secondAttribute="bottom" constant="8" id="h4G-7d-uMl"/>
+                            <constraint firstItem="G9P-O0-QpL" firstAttribute="top" secondItem="REB-Ys-sFO" secondAttribute="bottom" constant="8" id="oQh-JQ-6wT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="3O9-Sb-Tl5" id="2cD-Qd-nUO"/>
+                        <outlet property="prioritySelector" destination="G9P-O0-QpL" id="wG5-Mk-PKV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rxa-ii-OvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="38"/>
         </scene>
     </scenes>
 </document>

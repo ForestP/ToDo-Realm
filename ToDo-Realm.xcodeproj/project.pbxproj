@@ -23,6 +23,7 @@
 		AE0FAC8A1E944BCC00C44DAF /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAC891E944BCC00C44DAF /* NibLoadableView.swift */; };
 		AE0FAC8D1E944C7800C44DAF /* taskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAC8B1E944C7800C44DAF /* taskCell.swift */; };
 		AE0FAC8E1E944C7800C44DAF /* taskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE0FAC8C1E944C7800C44DAF /* taskCell.xib */; };
+		AE0FAC941E94570800C44DAF /* TaskDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAC931E94570800C44DAF /* TaskDetailVC.swift */; };
 		DED5150911055A6E1E37D828 /* Pods_ToDo_RealmUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A916D5CA2A23D8373327E5 /* Pods_ToDo_RealmUITests.framework */; };
 		FA44232FCE3C92ED2F053F2C /* Pods_ToDo_RealmTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD8F36D98247A99E9EA6B86 /* Pods_ToDo_RealmTests.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		AE0FAC901E944D2600C44DAF /* SFDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFDisplay-Light.otf"; path = "../../Ghost/Ghost/Ghost/SFDisplay-Light.otf"; sourceTree = "<group>"; };
 		AE0FAC911E944D2600C44DAF /* SFDisplay-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFDisplay-Regular.otf"; path = "../../Ghost/Ghost/Ghost/SFDisplay-Regular.otf"; sourceTree = "<group>"; };
 		AE0FAC921E944D2600C44DAF /* SFDisplay-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SFDisplay-Thin.otf"; path = "../../Ghost/Ghost/Ghost/SFDisplay-Thin.otf"; sourceTree = "<group>"; };
+		AE0FAC931E94570800C44DAF /* TaskDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailVC.swift; sourceTree = "<group>"; };
 		D9AF30BE7580453DAF6B10BC /* Pods-ToDo-RealmUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDo-RealmUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDo-RealmUITests/Pods-ToDo-RealmUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				AE0FAC4D1E93E82400C44DAF /* ToDoVC.swift */,
+				AE0FAC931E94570800C44DAF /* TaskDetailVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE0FAC941E94570800C44DAF /* TaskDetailVC.swift in Sources */,
 				AE0FAC8A1E944BCC00C44DAF /* NibLoadableView.swift in Sources */,
 				AE0FAC801E93EB6200C44DAF /* Task.swift in Sources */,
 				AE0FAC821E93EDAF00C44DAF /* TaskList.swift in Sources */,
@@ -699,6 +703,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DPBA8FX7MF;
 				INFOPLIST_FILE = "ToDo-Realm/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ForestPlasencia.ToDo-Realm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -713,6 +718,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DPBA8FX7MF;
 				INFOPLIST_FILE = "ToDo-Realm/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ForestPlasencia.ToDo-Realm";
 				PRODUCT_NAME = "$(TARGET_NAME)";

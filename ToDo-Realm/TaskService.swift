@@ -23,9 +23,9 @@ class TaskService {
         return _instance
     }
 
-    let taskList = TaskList()
+   // let taskList = TaskList()
     
-    let realm = try! Realm()
+    lazy var realm = try! Realm()
 
     
     func createTask(taskDesc: String, taskPriority: Int) {
@@ -33,13 +33,21 @@ class TaskService {
         newTask.taskDesc = taskDesc
         newTask.taskPriority = taskPriority
         newTask.createdDate = NSDate()
-        newTask.taskId = 1
+      //  let newId = taskList.currentId + 1
+       // self.taskList.currentId = newId
+        newTask.taskId = UUID().uuidString
         
-        self.taskList.tasks.append(newTask)
+       // self.taskList.tasks.append(newTask)
+        
+        try! realm.write {
+            self.realm.add(newTask)
+        }
+        
+        
     }
     
     
-    func editTaskDesc(taskId: Int, newDesc: String){
+    func editTaskDesc(taskId: String, newDesc: String){
         
         let taskToEdit = Task()
         taskToEdit.taskDesc = newDesc
@@ -50,9 +58,10 @@ class TaskService {
         }
     }
     
-    func editTaskPriority(taskId: Int, newPriority: Int) {
+    func editTask(taskId: String, newDesc: String, newPriority: Int) {
         
         let taskToEdit = Task()
+        taskToEdit.taskDesc = newDesc
         taskToEdit.taskPriority = newPriority
         taskToEdit.taskId = taskId
         

@@ -8,7 +8,10 @@
 
 import Foundation
 import RealmSwift
+import Realm
 
-class TaskList: Object {
-    let tasks = List<Task>()
-}
+//class TaskList: Object {
+//    let tasks = List<Task>()
+//    dynamic var currentId = 0
+//
+//}
