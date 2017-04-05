@@ -30,10 +30,16 @@
                         <rect key="frame" x="4" y="8" width="365" height="72.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wNx-kp-r6l">
-                                <rect key="frame" x="259.5" y="42" width="101.5" height="30"/>
+                                <rect key="frame" x="8" y="42" width="353" height="30"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAK-GB-EeY">
+                                        <rect key="frame" x="0.0" y="0.0" width="243" height="30"/>
+                                        <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuM-qS-PzD">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                        <rect key="frame" x="253" y="0.0" width="40" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="cqc-C7-NIB"/>
                                         </constraints>
@@ -46,9 +52,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMk-f5-8an">
-                                        <rect key="frame" x="50" y="0.0" width="51.5" height="30"/>
+                                        <rect key="frame" x="303" y="0.0" width="50" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Pv9-V6-87C"/>
+                                            <constraint firstAttribute="width" constant="50" id="SAe-rV-V3l"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="13"/>
                                         <state key="normal" title="Delete">
@@ -69,6 +76,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.094117647060000004" green="0.090196078430000007" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wNx-kp-r6l" firstAttribute="leading" secondItem="Bjw-wG-WWf" secondAttribute="leading" id="3R4-0h-cfo"/>
                             <constraint firstItem="wNx-kp-r6l" firstAttribute="top" secondItem="Bjw-wG-WWf" secondAttribute="bottom" constant="4" id="HE9-Rs-FNn"/>
                             <constraint firstAttribute="bottom" secondItem="wNx-kp-r6l" secondAttribute="bottom" constant="0.40000000000000002" id="IAW-no-xGP"/>
                             <constraint firstItem="Bjw-wG-WWf" firstAttribute="top" secondItem="Hw7-62-3MR" secondAttribute="top" constant="4" id="QqQ-h8-C5C"/>
@@ -86,6 +94,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="createdLbl" destination="yAK-GB-EeY" id="rl8-FG-l8V"/>
                 <outlet property="taskDescription" destination="Bjw-wG-WWf" id="MwV-Mw-tja"/>
             </connections>
             <point key="canvasLocation" x="60.5" y="76.5"/>
