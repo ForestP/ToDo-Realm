@@ -21,8 +21,6 @@ class TaskDetailVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         if let editableTask = self.task {
             self.descriptionTextField.text = editableTask.taskDesc
@@ -49,7 +47,6 @@ class TaskDetailVC: UIViewController {
         } else {
             if let id = task?.taskId {
                 self.ts.editTask(taskId: id, newDesc: taskDescription, newPriority: taskPriority)
-
             }
         }
         

@@ -43,7 +43,6 @@ class ToDoVC: UIViewController  {
 //            }
 //        }
         self.tasks = realm.objects(Task)
-        print(tasks)
     }
 
 
@@ -90,7 +89,6 @@ extension ToDoVC: UITableViewDelegate, UITableViewDataSource {
         
         if let numTasks = self.tasks?.count {
             numRows = numTasks
-            print("num tasks: \(numTasks)")
         }
         
         return numRows

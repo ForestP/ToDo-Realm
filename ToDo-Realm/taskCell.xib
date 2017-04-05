@@ -6,12 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="SFDisplay-Light.otf">
             <string>SFUIDisplay-Light</string>
+        </array>
+        <array key="SFDisplay-Regular.otf">
+            <string>SFUIDisplay-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -24,45 +26,63 @@
                 <rect key="frame" x="0.0" y="0.0" width="373" height="88.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNx-kp-r6l">
-                        <rect key="frame" x="16" y="16" width="341" height="26.5"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hw7-62-3MR" customClass="TaskView" customModule="ToDo_Realm" customModuleProvider="target">
+                        <rect key="frame" x="4" y="8" width="365" height="72.5"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wNx-kp-r6l">
+                                <rect key="frame" x="259.5" y="42" width="101.5" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuM-qS-PzD">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="cqc-C7-NIB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="13"/>
+                                        <state key="normal" title="Edit">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="editTaskPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Cgm-lf-dap"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMk-f5-8an">
+                                        <rect key="frame" x="50" y="0.0" width="51.5" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Pv9-V6-87C"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="13"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteTaskPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JOR-I0-BIY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjw-wG-WWf">
-                                <rect key="frame" x="0.0" y="0.0" width="301" height="26.5"/>
-                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="15"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="8" y="4" width="353" height="34.5"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuM-qS-PzD">
-                                <rect key="frame" x="301" y="0.0" width="40" height="26.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="cqc-C7-NIB"/>
-                                </constraints>
-                                <state key="normal" title="Edit"/>
-                                <connections>
-                                    <action selector="editTaskPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Cgm-lf-dap"/>
-                                </connections>
-                            </button>
                         </subviews>
-                    </stackView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMk-f5-8an">
-                        <rect key="frame" x="312" y="50.5" width="45" height="30"/>
+                        <color key="backgroundColor" red="0.094117647060000004" green="0.090196078430000007" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="Pv9-V6-87C"/>
+                            <constraint firstItem="wNx-kp-r6l" firstAttribute="top" secondItem="Bjw-wG-WWf" secondAttribute="bottom" constant="4" id="HE9-Rs-FNn"/>
+                            <constraint firstAttribute="bottom" secondItem="wNx-kp-r6l" secondAttribute="bottom" constant="0.40000000000000002" id="IAW-no-xGP"/>
+                            <constraint firstItem="Bjw-wG-WWf" firstAttribute="top" secondItem="Hw7-62-3MR" secondAttribute="top" constant="4" id="QqQ-h8-C5C"/>
+                            <constraint firstItem="Bjw-wG-WWf" firstAttribute="leading" secondItem="Hw7-62-3MR" secondAttribute="leading" constant="8" id="WM6-Gi-bEn"/>
+                            <constraint firstAttribute="trailing" secondItem="wNx-kp-r6l" secondAttribute="trailing" constant="4" id="dnz-xP-Pkt"/>
+                            <constraint firstAttribute="trailing" secondItem="Bjw-wG-WWf" secondAttribute="trailing" constant="4" id="sbP-Ul-O0t"/>
                         </constraints>
-                        <state key="normal" title="Delete"/>
-                        <connections>
-                            <action selector="deleteTaskPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JOR-I0-BIY"/>
-                        </connections>
-                    </button>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="eMk-f5-8an" secondAttribute="bottom" constant="8" id="2PM-fs-gV7"/>
-                    <constraint firstItem="wNx-kp-r6l" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="T1k-ok-LyA"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="wNx-kp-r6l" secondAttribute="trailing" constant="8" id="VCi-5p-tPr"/>
-                    <constraint firstItem="wNx-kp-r6l" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="hkb-Hd-M9X"/>
-                    <constraint firstItem="eMk-f5-8an" firstAttribute="top" secondItem="wNx-kp-r6l" secondAttribute="bottom" constant="8" id="lMe-OY-0iY"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="eMk-f5-8an" secondAttribute="trailing" constant="8" id="uKr-Kn-BvE"/>
+                    <constraint firstItem="Hw7-62-3MR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="7qK-VK-yOH"/>
+                    <constraint firstItem="Hw7-62-3MR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="bEx-Nv-mty"/>
+                    <constraint firstAttribute="bottom" secondItem="Hw7-62-3MR" secondAttribute="bottom" constant="8" id="jMM-jR-hWg"/>
+                    <constraint firstAttribute="trailing" secondItem="Hw7-62-3MR" secondAttribute="trailing" constant="4" id="s1d-07-s1G"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

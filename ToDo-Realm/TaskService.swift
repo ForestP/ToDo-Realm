@@ -12,18 +12,9 @@ import RealmSwift
 class TaskService {
     private static let _instance = TaskService()
     
-   // weak var delegate: FindMoonServiceDelegate?
-    
-    /*
-    init(taskList: TaskList){
-        self.taskList = taskList
-    } */
-    
     static var instance: TaskService {
         return _instance
     }
-
-   // let taskList = TaskList()
     
     lazy var realm = try! Realm()
 
@@ -33,11 +24,8 @@ class TaskService {
         newTask.taskDesc = taskDesc
         newTask.taskPriority = taskPriority
         newTask.createdDate = NSDate()
-      //  let newId = taskList.currentId + 1
-       // self.taskList.currentId = newId
         newTask.taskId = UUID().uuidString
         
-       // self.taskList.tasks.append(newTask)
         
         try! realm.write {
             self.realm.add(newTask)
