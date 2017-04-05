@@ -34,18 +34,6 @@ class TaskService {
         
     }
     
-    
-    func editTaskDesc(taskId: String, newDesc: String){
-        
-        let taskToEdit = Task()
-        taskToEdit.taskDesc = newDesc
-        taskToEdit.taskId = taskId
-        
-        try! realm.write {
-            realm.add(taskToEdit, update: true)
-        }
-    }
-    
     func editTask(taskId: String, newDesc: String, newPriority: Int) {
         
         let taskToEdit = Task()
